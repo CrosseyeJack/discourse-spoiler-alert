@@ -8,20 +8,12 @@ function spoil($elem) {
 function initializeSpoiler(api) {
   api.decorateCooked(spoil);
 
-//  api.addToolbarPopupMenuOptionsCallback(() => {
-//    return {
-//      action: 'insertSpoiler',
-//      icon: 'magic',
-//      label: 'spoiler.title'
-//    };
-//  });
-  
-  api.onToolbarCreate(toolbar => {
-    toolbar.addButton({
+  api.addToolbarPopupMenuOptionsCallback(() => {
+    return {
       action: 'insertSpoiler',
       icon: 'magic',
       label: 'spoiler.title'
-    });
+    };
   });
 
   ComposerController.reopen({
