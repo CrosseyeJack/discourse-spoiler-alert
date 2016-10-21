@@ -19,6 +19,7 @@ function initializeSpoiler(api) {
   ComposerController.reopen({
     actions: {
       insertSpoiler() {
+        console.log("Cheesecake");
         this.get("toolbarEvent").applySurround(
           "[spoiler]",
           "[/spoiler]",
