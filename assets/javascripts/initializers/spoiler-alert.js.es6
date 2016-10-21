@@ -37,5 +37,18 @@ export default {
     if (siteSettings.spoiler_enabled) {
       withPluginApi('0.5', initializeSpoiler, { noApi: () => decorateCooked(container, spoil) });
     }
+    
+    withPluginApi('0.1', api => {
+      api.onToolbarCreate(toolbar => {
+        toolbar.addButton({
+          id: 'spoiler',
+          group: 'extras',
+          icon: 'magic',
+          action: 'insertSpoiler',
+          title: 'spoiler.title'
+        });
+      });
+    });
+    
   }
 };
