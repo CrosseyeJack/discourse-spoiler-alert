@@ -49,6 +49,21 @@ export default {
           title: 'spoiler.title'
         });
       });
+      
+      ComposerController.reopen({
+        actions: {
+          insertSpoiler() {
+            console.log("Cheesecake");
+            this.get("toolbarEvent").applySurround(
+              "[spoiler]",
+              "[/spoiler]",
+              "spoiler_text",
+              { multiline: false }
+            );
+          }
+        }
+      });
+      
     });
     
   }
