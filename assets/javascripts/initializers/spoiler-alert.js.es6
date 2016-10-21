@@ -31,6 +31,8 @@ function initializeSpoiler(api) {
   });
 }
 
+// Add the spoiler button to the toolbar
+
 export default {
   name: "apply-spoilers",
   initialize(container) {
@@ -45,7 +47,6 @@ export default {
           id: 'spoiler',
           group: 'extras',
           icon: 'magic',
-          action: 'insertSpoiler',
           title: 'spoiler.title',
           perform: function(e){
             return e.applySurround('[spoiler]', '[/spoiler]', 'spoiler_text')
