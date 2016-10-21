@@ -46,22 +46,11 @@ export default {
           group: 'extras',
           icon: 'magic',
           action: 'insertSpoiler',
-          title: 'spoiler.title'
-        });
-      });
-      
-      ComposerController.reopen({
-        actions: {
-          insertSpoiler() {
-            console.log("Cheesecake");
-            this.get("toolbarEvent").applySurround(
-              "[spoiler]",
-              "[/spoiler]",
-              "spoiler_text",
-              { multiline: false }
-            );
+          title: 'spoiler.title',
+          perform: function(e){
+            return e.applySurround('[spoiler]', '[/spoiler]', 'spoiler_text')
           }
-        }
+        });
       });
       
     });
